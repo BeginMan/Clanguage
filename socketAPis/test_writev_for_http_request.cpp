@@ -51,7 +51,7 @@ int main(int argc, char **argv)
     address.sin_port = htons(port);
     address.sin_addr.s_addr = htonl(INADDR_ANY);
 
-    int sock = socket(AF_INET, SOCK_STREAM, 0);
+    int sock = socket(PF_INET, SOCK_STREAM, 0);
     assert(sock != -1);
 
     int ret = bind(sock, (struct sockaddr*)&address, sizeof(address));
